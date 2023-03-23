@@ -341,9 +341,10 @@ class BasicStat:
 
 if __name__ == '__main__':
     data_names = ["애플페이", "OpenAI"]
+    tok_langs = ["ko", "en"]
 
-    for data_name in data_names:
-        basic_stat = BasicStat(data_name=data_name)
+    for data_name, tok_lang in zip(data_names, tok_langs):
+        basic_stat = BasicStat(data_name=data_name, tokenizer_lang=tok_lang)
         with open(f"{data_name}-stat.txt", 'w') as sys.stdout:
             basic_stat.stat_tweet_created()
             basic_stat.plot_tweet_created()
