@@ -14,7 +14,7 @@ class Url:
 class TweetEntity:
     hashtags: List[str]
     symbols: List[str]
-    user_metions: List[str]
+    user_mentions: List[str]
     urls: List[Url]
 
 
