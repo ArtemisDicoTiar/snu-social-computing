@@ -1,0 +1,12 @@
+- [ ] Twitter 연관어 분석
+	- [ ] – 배운 것을 바탕으로 해당 주제에 관하여 수집된 tweet의 text를 분석한다
+	- [ ] – 단어 빈도, word cloud, 및 retweet등을 분석하여 해당 주제에 대한 연관어를 분석하여 report를 작성하여 제출한다.
+- [ ] – Bonus
+	- [ ] • 분석의 논리적 구성
+	- [ ] • 선행 연구를 바탕으로 한 분석
+	- [ ] • 한글에 대한 Stemming, stopword 처리
+- [ ] • 다음 논문을 읽어온다
+	- [ ] – The Strength of Weak Ties
+	- [ ] – By Mark S. Granovetter
+	- [ ] – https://sociology.stanford.edu/sites/default/files/publications/the_strength_of_weak_ties_and
+	- [ ] _exch_w-gans.pdf
