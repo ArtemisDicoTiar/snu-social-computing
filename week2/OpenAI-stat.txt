@@ -1,0 +1,133 @@
+==================================
+STATISTICS of Tweet Created Datetime (UTC)
+min: 	Wed Mar 15 14:47:00  2023
+max: 	Wed Mar 15 15:14:55  2023
+mean: 	Wed Mar 15 15:01:06  2023
+median: Wed Mar 15 15:01:32  2023
+==================================
+==================================
+STATISTICS of User Created Datetime (UTC)
+min: 	Tue Jul 18 18:37:11  2006
+max: 	Sat Mar 11 13:21:49  2023
+mean: 	Wed Sep 30 17:38:01  2015
+median: Fri Dec 25 11:35:58  2015
+==================================
+==================================
+STATISTICS of Number of Tweets By each user
+min: 	1
+max: 	3913302
+mean: 	45716.03693444136
+median: 4755
+==================================
+==================================
+STATISTICS of Number of Followers
+min: 	0
+max: 	9202692
+mean: 	32068.371191135735
+median: 345
+==================================
+==================================
+Hashtags top-k (k=10)
+[('OpenAI', 35),
+ ('GPT4', 34),
+ ('ChatGPT', 33),
+ ('AI', 22),
+ ('gpt4', 15),
+ ('Web3', 14),
+ ('openai', 14),
+ ('chatgpt4', 8),
+ ('Microsoft', 6),
+ ('GPT', 6)]
+==================================
+==================================
+Tweet Language top-k (k=10)
+[('en', 734),
+ ('ja', 128),
+ ('zh', 39),
+ ('es', 37),
+ ('und', 33),
+ ('fr', 27),
+ ('in', 18),
+ ('pt', 16),
+ ('ko', 10),
+ ('ar', 10)]
+==================================
+==================================
+User Language top-k (k=10)
+[(None, 1083)]
+==================================
+==================================
+Most Frequent Nouns top-k (k=10)
+[('구글', 6),
+ ('발표', 6),
+ ('결과', 4),
+ ('및', 4),
+ ('현재', 4),
+ ('대충', 4),
+ ('의', 4),
+ ('입장', 3),
+ ('모두', 3),
+ ('데이터', 3)]
+==================================
+중복 포함한 전체 RT 개수: 611
+Tweet ID로 중복 제거한 RT 개수: 268
+내용 중복 제거한 RT 개수: 268
+==================================
+top-k retweeted Tweets (k=10)
+[{'RT count': 16356,
+  'Tweet': 'RT @OpenAI: Announcing GPT-4, a large multimodal model, with our '
+           'best-ever results on capabilities and alignment: '
+           'https://t.co/TwLFssyALF h…',
+  'User': 'OpenAI'},
+ {'RT count': 4335,
+  'Tweet': 'RT @sama: here is GPT-4, our most capable and aligned model yet. '
+           'it is available today in our API (with a waitlist) and in '
+           'ChatGPT+.\n'
+           '\n'
+           'https…',
+  'User': 'sama'},
+ {'RT count': 3187,
+  'Tweet': 'RT @gomezidao: Gomezi Network:\n'
+           '- large open source, \n'
+           '- built in the open, \n'
+           '- community driven,\n'
+           '- funded in a decentralised manner.\n'
+           '🔵Like &amp;…',
+  'User': 'gomezidao'},
+ {'RT count': 2173,
+  'Tweet': "RT @unusual_whales: OpenAI's ChatGPT has reportedly predicted that "
+           'the stock market will crash on March 15, 2023, per BI.',
+  'User': 'unusual_whales'},
+ {'RT count': 2116,
+  'Tweet': "RT @The_Delysium: @OpenAI Speaking of breakthroughs - here's the "
+           'biggest one in #Web3  https://t.co/bi3OoAX4KE',
+  'User': 'The_Delysium'},
+ {'RT count': 1716,
+  'Tweet': 'RT @thealexbanks: OpenAI just launched GPT-4.\n'
+           '\n'
+           'It leaves ChatGPT in the dust.\n'
+           '\n'
+           "Here's everything you need to know: https://t.co/Oc6TrygvNO",
+  'User': 'thealexbanks'},
+ {'RT count': 1617,
+  'Tweet': 'RT @kana_Eng_coach: '
+           '世界一人気の語学アプリDuolingoが、OpenAI社のGPT-4を搭載したDuolingo '
+           'Maxを公開。Maxは会話の練習相手で、間違えた時は話し手がなぜその文章で話したかまで理解して、解説をくれるという優れもの。AIによって世界中…',
+  'User': 'kana_Eng_coach'},
+ {'RT count': 1343,
+  'Tweet': 'RT @gdb: We’re releasing GPT-4 — a large multimodal model (image '
+           '&amp; text in, text out) which is a significant advance in both '
+           'capability and…',
+  'User': 'gdb'},
+ {'RT count': 1067,
+  'Tweet': "RT @spectatorindex: BREAKING: OpenAI's ChatGPT-4 passed the Law "
+           'Bar Exam with a result in the 90th percentile',
+  'User': 'spectatorindex'},
+ {'RT count': 1052,
+  'Tweet': 'RT @DotCSV: 🔴 GPT-4 YA ESTÁ AQUÍ!!!\n'
+           '\n'
+           'Hoy era el día. La bestia ya ha llegado.\n'
+           '\n'
+           'El nuevo modelo de OpenAI se ha liberado cumpliendo con much…',
+  'User': 'DotCSV'}]
+==================================
