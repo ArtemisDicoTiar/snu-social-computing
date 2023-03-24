@@ -1,0 +1,55 @@
+========== TOP-10 alls ==========
+[('openai', 558),
+ ('gpt-4', 367),
+ ('ai', 139),
+ ('chatgpt', 137),
+ ('model', 133),
+ ('’', 116),
+ ('new', 86),
+ ('large', 85),
+ ('multimodal', 84),
+ ('capabilities', 72)]
+========== TOP-10 nouns ==========
+[('openai', 181),
+ ('model', 133),
+ ('chatgpt', 89),
+ ('’', 89),
+ ('capabilities', 72),
+ ('ai', 67),
+ ('results', 66),
+ ('h…', 65),
+ ('gpt-4', 56),
+ ('today', 36)]
+========== TOP-10 verbs ==========
+[('openai', 136),
+ ('announcing', 65),
+ ('alignment', 65),
+ ('know', 46),
+ ('launched', 42),
+ ('chatgpt', 35),
+ ('ai', 35),
+ ('think', 24),
+ ('released', 20),
+ ('announced', 18)]
+========== TOP-10 adverbs ==========
+[("n't", 21),
+ ('also', 18),
+ ('openai', 14),
+ ('even', 13),
+ ('recently', 12),
+ ('yet', 12),
+ ('still', 12),
+ ('really', 10),
+ ('successfully', 9),
+ ('literally', 6)]
+========== TOP-10 adjectives ==========
+[('gpt-4', 311),
+ ('openai', 195),
+ ('new', 86),
+ ('large', 85),
+ ('multimodal', 65),
+ ('best-ever', 65),
+ ('ai', 32),
+ ('’', 19),
+ ('capable', 19),
+ ('biggest', 17)]

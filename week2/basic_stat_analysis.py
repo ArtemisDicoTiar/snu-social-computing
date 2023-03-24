@@ -307,7 +307,6 @@ class BasicStat:
         print(f"중복 포함한 전체 RT 개수: {len(retweeted_tweets)}")
 
         # remove duplicates with dictionary
-        retweets_id = {status["retweeted_status"]["id"] for status in retweeted_tweets}
         retweets = {
             status["retweeted_status"]["id"]: (
                 status['retweet_count'], status['retweeted_status']['user']['screen_name'], status['text'])
