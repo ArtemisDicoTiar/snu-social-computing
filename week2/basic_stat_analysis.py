@@ -209,8 +209,18 @@ class BasicStat:
             for status in self.twitter_data
         ]
 
+        self.num_followers_name = sorted(
+            [
+                (status["user"]["name"], status["user"]["followers_count"])
+                for status in self.twitter_data
+            ],
+            key=lambda i: i[1],
+            reverse=True
+        )
+
     def stat_num_followers(self):
         self._print_stat(which="Number of Followers", items=self.num_followers)
+        print(self.num_followers_name[:10])
 
     def plot_num_followers(self):
         self._plot_hist(savename=f"{self.data_name}-num-followers.jpg", data=self.num_followers,

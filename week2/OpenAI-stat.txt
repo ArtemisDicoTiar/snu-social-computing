@@ -26,6 +26,7 @@ max: 	9202692
 mean: 	32068.371191135735
 median: 345
 ==================================
+[('Bloomberg', 9202692), ('NTN24', 4770612), ('Economic Times', 4325209), ('NTN24 Venezuela', 4220668), ('Gizmodo', 2768837), ('Moneycontrol', 1377931), ('Moneycontrol', 1377931), ('MarketingDirecto.com', 410723), ('StockMKTNewz - Evan', 304664), ('hiten.eth', 270280)]
 ==================================
 Hashtags top-k (k=10)
 [('OpenAI', 35),
