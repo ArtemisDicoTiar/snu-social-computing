@@ -10,7 +10,7 @@ import matplotlib
 import nltk
 from konlpy.tag import Okt
 from matplotlib import pyplot as plt
-from numpy import log2
+from numpy import log2, log10
 
 from pathlib import Path
 
@@ -119,7 +119,7 @@ class BasicStat:
 
         if loglog:
             plt.figure(figsize=(8, 6))
-            plt.hist(log2(list(filter(lambda i: i > 0, data))), log=True, bins=200, rwidth=0.5)
+            plt.hist(log10(list(filter(lambda i: i > 0, data))), log=True, bins=200, rwidth=0.5)
             plt.title(title)
             plt.xlabel(f"{x_axis} (log)")
             plt.ylabel(f"{y_axis} (log)")
@@ -345,7 +345,7 @@ if __name__ == '__main__':
     for data_name, tok_lang in zip(data_names, tok_langs):
         basic_stat = BasicStat(data_name=data_name, tokenizer_lang=tok_lang)
         with open(f"{data_name}-stat.txt", 'w') as sys.stdout:
-            basic_stat.stat_tweet_created()
+            basic_stat.stat_tweet_creatxed()
             basic_stat.plot_tweet_created()
 
             basic_stat.stat_user_created()
