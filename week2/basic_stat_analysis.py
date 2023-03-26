@@ -345,7 +345,7 @@ if __name__ == '__main__':
     for data_name, tok_lang in zip(data_names, tok_langs):
         basic_stat = BasicStat(data_name=data_name, tokenizer_lang=tok_lang)
         with open(f"{data_name}-stat.txt", 'w') as sys.stdout:
-            basic_stat.stat_tweet_creatxed()
+            basic_stat.stat_tweet_created()
             basic_stat.plot_tweet_created()
 
             basic_stat.stat_user_created()
