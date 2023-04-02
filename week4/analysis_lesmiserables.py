@@ -86,13 +86,31 @@ def main():
     girnew_comms = sorted(nxcom.girvan_newman(graph), key=len, reverse=True)
 
     print("================ greedy-mod ================")
-    print(f"len: {len(greedy_comms)}")
+    greedy_mod = nxcom.modularity(graph, greedy_comms)
+    print(f"len: {len(greedy_comms)}, mod: {greedy_mod}")
     pprint(greedy_comms)
 
+    mods = []
     for girnew_comm in girnew_comms:
         print(f"================ girnew-mod grp: {len(girnew_comm)} ================")
-        print(f"len: {len(girnew_comms)}")
+        mod = nxcom.modularity(graph, girnew_comm)
+        mods.append((len(girnew_comm), mod))
+        print(f"len: {len(girnew_comm)}, mod: {mod}")
         pprint(girnew_comm)
+
+    plt.plot(*zip(*mods), 'b-o')
+    plt.axhline(y=greedy_mod, color='r', linestyle='-')
+
+    max_x, max_y = sorted(mods, key=lambda i: i[1], reverse=True)[0]
+    plt.text(70, greedy_mod, (5, round(greedy_mod, 3)), size=12)
+    plt.text(max_x, max_y, (max_x, round(max_y, 3)), size=12)
+    plt.grid()
+    plt.legend(["girvan-newman", "greedy"])
+    plt.title("Modularity - # of community")
+    plt.xlabel("Number of community")
+    plt.ylabel("Modularity")
+    plt.savefig("./images/mod-com.png")
+    plt.close()
 
     def plot_community_graph(g, comm, which: str):
         set_node_community(g, comm)
@@ -132,15 +150,6 @@ def main():
     plot_community_graph(graph, comm=greedy_comms, which="greedy_modularity")
     for girnew_comm in girnew_comms:
         plot_community_graph(graph, comm=girnew_comm, which=f"girvan-newman grps:{len(girnew_comm)}")
-
-    # g = nx.path_graph(10)
-    #
-
-    #
-
-    #
-    # nx.draw(g)
-    # plt.show()
 
 
 if __name__ == '__main__':
