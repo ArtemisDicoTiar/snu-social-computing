@@ -135,8 +135,7 @@ class LandMap:
                 break
 
 
-
-if __name__ == '__main__':
+def hyper_param_experiment():
     records = {}
     for n_empty_house in range(2500, 7500, 2500):
         for sim_threshold_ten in [0.3, 0.5, 0.8]:
@@ -153,6 +152,35 @@ if __name__ == '__main__':
 
     with open("./grid_search_eh_st_rr", "w") as fp:
         json.dump(records, fp)
+
+
+def multi_race_hyper_param_experiment():
+    records = {}
+    for num_race in [4, 5]:
+        for sim_threshold_ten in [0.3, 0.5]:
+            sim_thresh = sim_threshold_ten
+
+            race_ratio = [round(1 / num_race, 3)] * num_race
+            print(f"===={race_ratio}===={2500}===={sim_thresh}")
+            world = LandMap(150, 150,
+                            races_ratio=race_ratio, empty_houses=2500, sim_threshold=sim_thresh)
+            world.loop()
+            records[f"eh{2500}_st{sim_thresh}_rr{race_ratio}"] = world.n_changes
+
+    with open("./grid_search_multi_race", "w") as fp:
+        json.dump(records, fp)
+
+
+def experiment(race_ratios, n_empty_house, sim_thresh):
+    print(f"===={race_ratios}===={n_empty_house}===={sim_thresh}")
+    world = LandMap(150, 150,
+                    races_ratio=race_ratios, empty_houses=n_empty_house, sim_threshold=sim_thresh)
+    world.loop()
+
+
+
+if __name__ == '__main__':
+    multi_race_hyper_param_experiment()
 
 
 

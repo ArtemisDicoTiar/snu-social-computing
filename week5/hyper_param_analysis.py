@@ -2,27 +2,58 @@ import json
 
 import matplotlib.pyplot as plt
 
-with open("./grid_search_eh_st_rr") as f:
-    lines = json.load(f)
 
-target = "eh5000"
-target_lines = {}
-for line in lines:
-    if target in line:
-        target_lines[line] = lines[line]
+def custom_analysis_eh_st_rr():
+    with open("./grid_search_eh_st_rr") as f:
+        lines = json.load(f)
 
-fig, ax = plt.subplots()
-for line in target_lines.values():
-    ax.plot(line)
-plt.legend(lines.keys())
-plt.show()
-# ax.set_title(f"Iteration {n_iter}", fontsize=10, fontweight="bold")
-# ax.set_xlim([0, self.width])
-# ax.set_ylim([0, self.height])
-# ax.set_xticks([])
-# ax.set_yticks([])
-# plt.savefig(self.save_path / f"ni{n_iter}.png")
-# plt.close(fig)
+    target_lines = {}
+    for line in lines:
+        if "eh2500" in line:
+            if "st0.5" in line:
+                target_lines[line] = lines[line]
+
+    fig, ax = plt.subplots()
+    for line in target_lines.values():
+        ax.plot(line)
+    plt.legend(target_lines.keys())
+    # plt.savefig(f"./images/hyper_params_{target}.png")
+    plt.show()
+    # plt.close()
 
 
+def analysis_eh_st_rr():
+    with open("./grid_search_eh_st_rr") as f:
+        lines = json.load(f)
 
+    targets = ["eh2500", "eh5000"]
+    for target in targets:
+        target_lines = {}
+        for line in lines:
+            if target in line:
+                target_lines[line] = lines[line]
+
+        fig, ax = plt.subplots()
+        for line in target_lines.values():
+            ax.plot(line)
+        plt.legend(target_lines.keys())
+        plt.savefig(f"./images/hyper_params_{target}.png")
+        plt.close()
+
+
+def analysis_multi_race():
+    with open("./grid_search_multi_race") as f:
+        lines = json.load(f)
+
+    fig, ax = plt.subplots()
+    for line in lines.values():
+        ax.plot(line)
+    plt.legend(lines.keys())
+    plt.savefig(f"./images/hyper_params_multi_race.png")
+    plt.close()
+
+
+if __name__ == '__main__':
+    # analysis_eh_st_rr()
+    # analysis_multi_race()
+    custom_analysis_eh_st_rr()
