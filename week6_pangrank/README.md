@@ -1,0 +1,8 @@
+- [ ] Network Book
+  - [ ] p. 394 13.6 연습문제 #Q1, #Q2, #Q3
+  - [ ] p. 429 14.7 연습문제 #Q3, #Q4
+- [ ] PageRank 분석을 수행하시오
+  - [ ] 1. PageRank algorithm을 loop방식으로 구현
+  - [ ] 2. https://github.com/timothyasp/PageRank/tree/master/data 에서 download받은 dolphins.csv 와 lesmis.csv 를 PageRank 분석
+  - [ ] 3. 도전 과제: PageRank algorithm을 MapReduce 방식으로 구현해서 두가지 방법을 비교하시오
+  - [ ] 4. 코드를 포함한 분석 결과 보고서 pdf
