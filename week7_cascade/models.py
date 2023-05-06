@@ -1,6 +1,7 @@
 import os
 
 import numpy as np
+from ipywidgets import interact, IntSlider, FloatSlider, Layout
 from scipy.integrate import odeint
 import plotly.graph_objects as go
 
@@ -8,7 +9,7 @@ from week7_cascade.hyperparams import initE, initI, initR, initN, DAYS, BETA, SI
 
 
 class EpidemicModel:
-    def __init__(self, days, initial_conditions, params,  *args, **kwargs):
+    def __init__(self, days, initial_conditions, params, *args, **kwargs):
         self.days = days
         self.initial_conditions_names = initial_conditions
         self.params_names = params
@@ -153,4 +154,23 @@ if __name__ == '__main__':
                 sigma=SIGMA,
                 gamma=GAMMA,
                 mu=MU)
-    seir.plot()
+
+    style = {'description_width': '100px'}
+    slider_layout = Layout(width='99%')
+    interact(seir.plot,
+             initE=IntSlider(min=0, max=100000, step=1, value=initE, description='initE', style=style,
+                             layout=slider_layout),
+             initI=IntSlider(min=0, max=100000, step=10, value=initI, description='initI', style=style,
+                             layout=slider_layout),
+             initR=IntSlider(min=0, max=100000, step=10, value=initR, description='initR', style=style,
+                             layout=slider_layout),
+             initN=IntSlider(min=0, max=1380000000, step=1000, value=initN, description='initN', style=style,
+                             layout=slider_layout),
+             beta=FloatSlider(min=0, max=4, step=0.01, value=BETA, description='Infection rate', style=style,
+                              layout=slider_layout),
+             sigma=FloatSlider(min=0, max=4, step=0.01, value=SIGMA, description='Incubation rate', style=style,
+                               layout=slider_layout),
+             gamma=FloatSlider(min=0, max=4, step=0.01, value=GAMMA, description='Recovery rate', style=style,
+                               layout=slider_layout),
+             days=IntSlider(min=1, max=600, step=7, value=DAYS, description='Days', style=style, layout=slider_layout)
+             )

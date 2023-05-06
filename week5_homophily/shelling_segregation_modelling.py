@@ -178,9 +178,5 @@ def experiment(race_ratios, n_empty_house, sim_thresh):
     world.loop()
 
 
-
 if __name__ == '__main__':
     multi_race_hyper_param_experiment()
-
-
-
