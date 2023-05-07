@@ -16,3 +16,5 @@ korea_pop = refer_df[refer_df["Combined_Key"] == "Korea, South"]["Population"].v
 us_pop = refer_df[refer_df["Combined_Key"] == "US"]["Population"].values.tolist()[0]
 uk_pop = refer_df[refer_df["Combined_Key"] == "United Kingdom"]["Population"].values.tolist()[0]
 global_pop = refer_df[refer_df["Province_State"].isnull()]["Population"].sum()
+
+print()

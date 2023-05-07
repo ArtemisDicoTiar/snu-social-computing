@@ -2,14 +2,13 @@ import json
 import os
 from typing import List
 
-import matplotlib.pyplot as plt
 import numpy as np
-from ipywidgets import interact, IntSlider, FloatSlider, Layout
+
 from scipy.integrate import odeint
 import plotly.graph_objects as go
 from sklearn.metrics import r2_score, mean_squared_error
 
-from week7_cascade.dataloader import korea_df, korea_pop
+from week7_cascade.dataloader import korea_df, korea_pop, us_pop, global_pop, uk_pop, global_df, uk_df, us_df
 from week7_cascade.hyperparams import initE, initI, initR, initN, DAYS, BETA, SIGMA, GAMMA, MU
 
 
@@ -75,7 +74,6 @@ class EpidemicModel:
         sol = self.solve(t=tspan)
 
         # Create traces
-
         for j, box in zip(range(sol.shape[-1]), self.boxes):
             if which is not None and box.lower() not in which:
                 continue
@@ -196,15 +194,32 @@ class SEIRD(EpidemicModel):
 
 if __name__ == '__main__':
     country = "korea"
-    population = korea_pop
-    beta_range = np.arange(0.1, 2, 0.4)
-    sigma_range = np.arange(0.1, 2, 0.4)
-    gamma_range = np.arange(0.1, 2, 0.4)
-    mu_range = np.arange(0.01, 0.1, 0.02)
+    real_range = [0, 150]
+    population = {
+        "korea": korea_pop,
+        "us": us_pop,
+        "uk": uk_pop,
+        "global": global_pop
+    }[country]
+    country_df = {
+        "korea": korea_df,
+        "us": us_df,
+        "uk": uk_df,
+        "global": global_df
+    }[country]
+    N_range = np.arange(0.1, 1, 0.25)
+    E_range = np.arange(0, 50, 50)
+    I_range = np.arange(0, 50, 50)
+    beta_range = np.arange(0.01, 1, 0.03)
+    sigma_range = np.arange(0.01, 1, 0.03)
+    gamma_range = np.arange(0.01, 1, 0.03)
+    mu_range = np.arange(0.01, 0.03, 0.01)
+
     losses = {}
-    model = SEIR(days=800,
+    model = SEIR(days=max(real_range),
                  initial_conditions=["initE", "initI", "initR", "initN"],
                  params=["beta", "sigma", "gamma"],
+                 # infection rate, incubation rate, recovery rate
                  initE=initE,
                  initI=initI,
                  initR=initR,
@@ -218,32 +233,78 @@ if __name__ == '__main__':
         os.mkdir(f"losses")
     if not os.path.exists(f"losses/{model.__class__.__name__.lower()}"):
         os.mkdir(f"losses/{model.__class__.__name__.lower()}")
-    print(f"total search: {len(beta_range) * len(sigma_range) * len(gamma_range) * len(mu_range)}")
+    if not os.path.exists(f"losses/{model.__class__.__name__.lower()}/{country}"):
+        os.mkdir(f"losses/{model.__class__.__name__.lower()}/{country}")
+
+    print(f"total search: {len(beta_range) * len(sigma_range) * len(gamma_range) * len([0]) * len(E_range) * len(I_range) * len(N_range)}")
     for beta in beta_range:
         for sigma in sigma_range:
             for gamma in gamma_range:
-                for mu in mu_range:
-                    model = SEIR(days=800,
-                                 initial_conditions=["initE", "initI", "initR", "initN"],
-                                 params=["beta", "sigma", "gamma"],
-                                 initE=initE,
-                                 initI=initI,
-                                 initR=initR,
-                                 initN=population,
-                                 beta=beta,
-                                 sigma=sigma,
-                                 gamma=gamma,
-                                 mu=mu)
-                    korea_data = korea_df["Confirmed"]
-                    model.plot_real(korea_data, "real")
-                    model.plot(which=["i"])
-                    loss = model.loss()
-                    losses[f"b{round(beta, 3)}s{round(sigma, 3)}g{round(gamma, 3)}m{round(mu, 3)}"] = loss
-                    # model.save_plot(f"korea_b{round(beta, 3)}s{round(sigma, 3)}g{round(gamma, 3)}m{round(mu, 3)}")
-                    print(".", end="")
+                # for mu in mu_range:
+                mu=0
+                for E in E_range:
+                    for I in I_range:
+                        for N in N_range:
+                            # beta = r0 * gamma
+                            model = SEIR(days=max(real_range),
+                                         initial_conditions=["initE", "initI", "initR", "initN"],
+                                         params=["beta", "sigma", "gamma"],
+                                         initE=initE + E,
+                                         initI=initI + I,
+                                         initR=initR,
+                                         initN=population*N,
+                                         beta=beta,
+                                         sigma=sigma,
+                                         gamma=gamma,
+                                         mu=mu
+                                         )
+                            real_data = (country_df["Confirmed"] - (country_df["Recovered"] + country_df["Deaths"])).values
+                            real_data = real_data[real_range[0]: real_range[1]]
+                            base = real_data[real_range[0]]
+                            real_data -= base
+                            model.plot_real(real_data, "real")
+                            model.plot()
+                            loss = model.loss()
+                            losses[f"E{E}_I{I}_N{N}_b{round(beta, 3)}_s{round(sigma, 3)}_g{round(gamma, 3)}_m{round(mu, 3)}"] = loss
+
+                            if not os.path.exists(f"images/{model.__class__.__name__.lower()}/{country}"):
+                                os.mkdir(f"images/{model.__class__.__name__.lower()}/{country}")
+                            # model.save_plot(f"{country}/E{E}_I{I}_b{round(beta, 3)}_s{round(sigma, 3)}_g{round(gamma, 3)}_m{round(mu, 3)}", show=True)
+                            print(".", end="")
+                        print()
+                    print()
+                    # print()
                 print()
             print()
         print()
-    losses = sorted(losses.items(), key=lambda i: i[1]["rmse"], reverse=False)
-    with open(f"losses/{model.__class__.__name__.lower()}/{country}.json", "w") as f:
+    losses = sorted(losses.items(), key=lambda i: i[1]["r2"], reverse=True)
+    with open(f"losses/{model.__class__.__name__.lower()}/{country}/{real_range}.json", "w") as f:
         f.write(json.dumps(losses))
+
+    opt = losses[0]
+    E, I, N, beta, sigma, gamma, mu = opt[0].split("_")
+    E, I, N, beta, sigma, gamma, mu = float(E[1:]), float(I[1:]), float(N[1:]), float(beta[1:]), float(sigma[1:]), float(gamma[1:]), float(mu[1:])
+    # E, I, beta, sigma, gamma, mu = 0, 0, 0.86, 0.19, 0.34, 0
+    r0 = beta / gamma
+    model = SEIR(days=max(real_range),
+                 initial_conditions=["initE", "initI", "initR", "initN"],
+                 params=["beta", "sigma", "gamma"],
+                 initE=initE + E,
+                 initI=initI + I,
+                 initR=initR,
+                 initN=population * N,
+                 beta=beta,
+                 sigma=sigma,
+                 gamma=gamma,
+                 mu=mu)
+    real_data = (country_df["Confirmed"] - (country_df["Recovered"] + country_df["Deaths"])).values
+    real_data = real_data[real_range[0]: real_range[1]]
+    base = real_data[real_range[0]]
+    real_data -= base
+    model.plot_real(real_data, "real")
+    model.plot(which=["i"], title=country)
+
+    if not os.path.exists(f"images/{model.__class__.__name__.lower()}/{country}"):
+        os.mkdir(f"images/{model.__class__.__name__.lower()}/{country}")
+    model.save_plot(f"{country}/{real_range}r0{round(r0, 3)}E{E}I{I}N{N}b{round(beta, 3)}s{round(sigma, 3)}g{round(gamma, 3)}m{round(mu, 3)}",
+                    show=True)
