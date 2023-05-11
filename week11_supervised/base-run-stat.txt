@@ -1,0 +1,124 @@
+"model_name='gaussian'"
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+search.best_params_={}
+conf_mat=
+[[305  42]
+ [ 19  34]]
+acc=0.8475
+prec=0.4473684210526316
+recall=0.6415094339622641
+
+"model_name='logistic_regression'"
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+search.best_params_={}
+conf_mat=
+[[338   9]
+ [ 37  16]]
+acc=0.885
+prec=0.64
+recall=0.3018867924528302
+
+"model_name='support_vector'"
+Fitting 5 folds for each of 98 candidates, totalling 490 fits
+search.best_params_={'C': 1.2, 'gamma': 0.9, 'kernel': 'rbf'}
+conf_mat=
+[[343   4]
+ [ 32  21]]
+acc=0.91
+prec=0.84
+recall=0.39622641509433965
+
+"model_name='decision_tree'"
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+search.best_params_={'max_depth': 3}
+conf_mat=
+[[335  12]
+ [ 38  15]]
+acc=0.875
+prec=0.5555555555555556
+recall=0.2830188679245283
+
+"model_name='random_forest'"
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+search.best_params_={'n_estimators': 200}
+conf_mat=
+[[332  15]
+ [ 34  19]]
+acc=0.8775
+prec=0.5588235294117647
+recall=0.3584905660377358
+
+"model_name='knn'"
+Fitting 5 folds for each of 3 candidates, totalling 15 fits
+search.best_params_={'n_neighbors': 1}
+conf_mat=
+[[322  25]
+ [ 17  36]]
+acc=0.895
+prec=0.5901639344262295
+recall=0.6792452830188679
+
+ensemble: 0.1
+conf_mat=
+[[290  57]
+ [  6  47]]
+acc=0.8425
+prec=0.4519230769230769
+recall=0.8867924528301887
+
+ensemble: 0.2
+conf_mat=
+[[322  25]
+ [ 18  35]]
+acc=0.8925
+prec=0.5833333333333334
+recall=0.660377358490566
+
+ensemble: 0.30000000000000004
+conf_mat=
+[[322  25]
+ [ 18  35]]
+acc=0.8925
+prec=0.5833333333333334
+recall=0.660377358490566
+
+ensemble: 0.4
+conf_mat=
+[[332  15]
+ [ 27  26]]
+acc=0.895
+prec=0.6341463414634146
+recall=0.49056603773584906
+
+ensemble: 0.5
+conf_mat=
+[[339   8]
+ [ 35  18]]
+acc=0.8925
+prec=0.6923076923076923
+recall=0.33962264150943394
+
+ensemble: 0.6
+conf_mat=
+[[339   8]
+ [ 35  18]]
+acc=0.8925
+prec=0.6923076923076923
+recall=0.33962264150943394
+
+ensemble: 0.7000000000000001
+conf_mat=
+[[345   2]
+ [ 44   9]]
+acc=0.885
+prec=0.8181818181818182
+recall=0.16981132075471697
+
+ensemble: 0.8
+conf_mat=
+[[345   2]
+ [ 44   9]]
+acc=0.885
+prec=0.8181818181818182
+recall=0.16981132075471697
+
