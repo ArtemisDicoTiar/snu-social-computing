@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Union
 
 import pandas as pd
+from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
@@ -14,6 +15,7 @@ class DataLoader:
                  cross_validate: bool = True,
                  cv_k: int = 5):
         df = pd.read_csv(file_path, sep=";")
+        self.df = df
 
         # Dividing wine as good and bad by giving the limit for the quality
         bins = (2, 6.5, 8)
@@ -47,4 +49,11 @@ class DataLoader:
         return self._test
 
 if __name__ == '__main__':
+    dataloader = DataLoader()
+
+    from pandas.plotting import scatter_matrix
+
+    scatter_matrix(dataloader.df, alpha=0.2, figsize=(18, 18), diagonal='kde')
+    plt.savefig("./images/dataset_desc.png")
+    # plt.show()
     print()

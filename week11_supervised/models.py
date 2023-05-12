@@ -18,7 +18,10 @@ from week11_supervised.dataloader import DataLoader
 
 
 class SupervisedModel:
-    def __init__(self, which: str = None, params: dict = {}):
+    def __init__(self, which: str = None, params=None):
+        if params is None:
+            params = {}
+
         assert which is not None
 
         self.model_list = {
