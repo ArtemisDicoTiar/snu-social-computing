@@ -13,22 +13,26 @@ class DataLoader:
     def __init__(self,
                  file_path: Union[str, Path] = DATA_DIR / "winequality-red.csv",
                  cross_validate: bool = True,
-                 cv_k: int = 5):
+                 cv_k: int = 5,
+                 cut: bool = True):
         df = pd.read_csv(file_path, sep=";")
         self.df = df
 
         # Dividing wine as good and bad by giving the limit for the quality
         bins = (2, 6.5, 8)
-        group_names = ['bad', 'good']
-        df['quality'] = pd.cut(df['quality'], bins=bins, labels=group_names)
+        if cut:
+            group_names = ['bad', 'good']
+            df['quality'] = pd.cut(df['quality'], bins=bins, labels=group_names)
 
-        # Now lets assign a labels to our quality variable
-        label_quality = LabelEncoder()
-        # Bad becomes 0 and good becomes 1
-        df['quality'] = label_quality.fit_transform(df['quality'])
+            # Now lets assign a labels to our quality variable
+            label_quality = LabelEncoder()
+            # Bad becomes 0 and good becomes 1
+            df['quality'] = label_quality.fit_transform(df['quality'])
 
         y = df["quality"].values
+        self.y = y
         X = df[filter(lambda col: col != "quality", df.columns.tolist())].values
+        self.X = X
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 

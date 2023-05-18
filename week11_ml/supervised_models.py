@@ -14,7 +14,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import LinearSVC, SVC
 from sklearn.tree import DecisionTreeClassifier
 
-from week11_supervised.dataloader import DataLoader
+from week11_ml.dataloader import DataLoader
 
 
 class SupervisedModel:
