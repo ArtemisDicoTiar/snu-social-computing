@@ -160,35 +160,36 @@ def tsne(x, y, save_fname: str = None):
 
 
 if __name__ == '__main__':
-    # for color in ['red', 'white']:
-    #     dataloader = DataLoader(file_path=DATA_DIR / f"winequality-{color}.csv",cut=False)
-    #
-    #     Xs = StandardScaler().fit_transform(dataloader.X)
-    #
-    #     ys = dataloader.y
-    #     sum_of_squared_distances = []
-    #     ks = range(0, 30)
-    #     for k in ks:
-    #         labels = ys
-    #         if k != 0:
-    #             kmeans = KMeans(n_clusters=k, n_init='auto')
-    #             kmeans.fit(Xs)
-    #
-    #             sum_of_squared_distances.append(kmeans.inertia_)
-    #             labels = kmeans.labels_
-    #
-    #         pca(Xs, labels, save_fname=f"./images/unsupervised/{color}/pca-kmeans-k={k}.png")
-    #         tsne(Xs, labels, save_fname=f"./images/unsupervised/{color}/tsne-kmeans-k={k}.png")
-    #         print(f"{k} Done...")
-    #
-    #     plt.plot(ks[1:], sum_of_squared_distances, 'bx-')
-    #     plt.xlabel('k')
-    #     plt.ylabel('Sum_of_squared_distances')
-    #     plt.title('Elbow Method For Optimal k')
-    #     plt.savefig(f"./images/unsupervised/{color}/optimal_k.png")
-    #     plt.close()
-        # plt.show()
+    for color in ['red', 'white']:
+        dataloader = DataLoader(file_path=DATA_DIR / f"winequality-{color}.csv",cut=False)
 
+        Xs = StandardScaler().fit_transform(dataloader.X)
+
+        ys = dataloader.y
+        sum_of_squared_distances = []
+        ks = range(0, 30)
+        for k in ks:
+            labels = ys
+            if k != 0:
+                kmeans = KMeans(n_clusters=k, n_init='auto')
+                kmeans.fit(Xs)
+
+                sum_of_squared_distances.append(kmeans.inertia_)
+                labels = kmeans.labels_
+
+            pca(Xs, labels, save_fname=f"./images/unsupervised/{color}/pca-kmeans-k={k}.png")
+            tsne(Xs, labels, save_fname=f"./images/unsupervised/{color}/tsne-kmeans-k={k}.png")
+            print(f"{k} Done...")
+
+        plt.plot(ks[1:], sum_of_squared_distances, 'bx-')
+        plt.xlabel('k')
+        plt.ylabel('Sum_of_squared_distances')
+        plt.title('Elbow Method For Optimal k')
+        plt.savefig(f"./images/unsupervised/{color}/optimal_k.png")
+        plt.close()
+        plt.show()
+
+    exit()
     red_dataloader = DataLoader(file_path=DATA_DIR / f"winequality-red.csv", cut=False)
     white_dataloader = DataLoader(file_path=DATA_DIR / f"winequality-white.csv", cut=False)
 
@@ -197,7 +198,7 @@ if __name__ == '__main__':
     # ys = np.concatenate([red_dataloader.y, white_dataloader.y], axis=0)
     ys = np.array([0 for _ in range(len(red_dataloader.y))] + [1 for _  in range(len(white_dataloader.y))])
     sum_of_squared_distances = []
-    ks = range(0, 4)
+    ks = range(0, 1)
     for k in ks:
         labels = ys
         if k != 0:
