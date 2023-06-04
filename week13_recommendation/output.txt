@@ -1,0 +1,258 @@
+### iteration step :  0  rmse :  2.7913346191717743
+### iteration step :  10  rmse :  0.7203615805002401
+### iteration step :  20  rmse :  0.5439595617619063
+### iteration step :  30  rmse :  0.4569463089833634
+### iteration step :  40  rmse :  0.4110540700185101
+### iteration step :  50  rmse :  0.3839530409139486
+### iteration step :  60  rmse :  0.3664076908631245
+### iteration step :  70  rmse :  0.35413301919718876
+### iteration step :  80  rmse :  0.3450326808879142
+### iteration step :  90  rmse :  0.33799402425282216
+title   '71 (2014)  ...  À nous la liberté (Freedom for Us) (1931)
+userId              ...                                           
+1         3.495744  ...                                   0.986817
+2         3.378462  ...                                   0.881555
+3         2.000513  ...                                   0.504183
+
+[3 rows x 9719 columns]
+["'71 (2014)", "'Hellboy': The Seeds of Creation (2004)", "'Round Midnight (1986)"]
+title
+'71 (2014)                                   2.630075
+'Hellboy': The Seeds of Creation (2004)      2.852746
+'Round Midnight (1986)                       2.402316
+'Salem's Lot (2004)                          3.351557
+'Til There Was You (1997)                    3.713112
+                                               ...   
+eXistenZ (1999)                              1.511690
+xXx (2002)                                   1.184207
+xXx: State of the Union (2005)               1.578714
+¡Three Amigos! (1986)                        2.924674
+À nous la liberté (Freedom for Us) (1931)    0.812098
+Name: 10, Length: 9579, dtype: float64
+title
+Scream (1996)                                        6.413609
+Star Wars: Episode VII - The Force Awakens (2015)    6.390792
+Others, The (2001)                                   5.983003
+Sting, The (1973)                                    5.869644
+Star Trek: The Motion Picture (1979)                 5.851924
+Dune (2000)                                          5.677879
+Look Who's Talking (1989)                            5.487522
+Remember the Titans (2000)                           5.472028
+West Side Story (1961)                               5.460985
+How to Make an American Quilt (1995)                 5.422558
+Name: 10, dtype: float64
+### iteration step :  0  rmse :  2.9023619751336867
+### iteration step :  10  rmse :  0.7335768591017927
+### iteration step :  20  rmse :  0.5115539026853442
+### iteration step :  30  rmse :  0.37261628282537446
+### iteration step :  40  rmse :  0.29608182991810134
+### iteration step :  50  rmse :  0.2520353192341642
+### iteration step :  60  rmse :  0.2248750327526985
+### iteration step :  70  rmse :  0.20685455302331537
+### iteration step :  80  rmse :  0.19413418783028683
+### iteration step :  90  rmse :  0.184700820027204
+title   '71 (2014)  ...  À nous la liberté (Freedom for Us) (1931)
+userId              ...                                           
+1         3.140208  ...                                   0.881563
+2         3.160184  ...                                   0.773066
+3         2.399852  ...                                   0.459202
+
+[3 rows x 9719 columns]
+["'71 (2014)", "'Hellboy': The Seeds of Creation (2004)", "'Round Midnight (1986)"]
+title
+'71 (2014)                                   2.224956
+'Hellboy': The Seeds of Creation (2004)      2.826676
+'Round Midnight (1986)                       2.404251
+'Salem's Lot (2004)                          3.517168
+'Til There Was You (1997)                    3.001631
+                                               ...   
+eXistenZ (1999)                              2.919913
+xXx (2002)                                   1.630214
+xXx: State of the Union (2005)               1.276153
+¡Three Amigos! (1986)                        4.198149
+À nous la liberté (Freedom for Us) (1931)    0.684832
+Name: 10, Length: 9579, dtype: float64
+title
+It's a Wonderful Life (1946)         5.413572
+First Knight (1995)                  5.355410
+Postman, The (Postino, Il) (1994)    5.190693
+Sense and Sensibility (1995)         5.122721
+Thank You for Smoking (2006)         5.114618
+Little Mermaid, The (1989)           5.047896
+Sandlot, The (1993)                  5.029290
+Charlotte's Web (1973)               5.014371
+Charlie's Angels (2000)              4.946276
+Say Anything... (1989)               4.930097
+Name: 10, dtype: float64
+### iteration step :  0  rmse :  2.9956061515325354
+### iteration step :  10  rmse :  0.7407092473407014
+### iteration step :  20  rmse :  0.5142359933123116
+### iteration step :  30  rmse :  0.3507996340583858
+### iteration step :  40  rmse :  0.25542974939418855
+### iteration step :  50  rmse :  0.20094819590697005
+### iteration step :  60  rmse :  0.16862182617277421
+### iteration step :  70  rmse :  0.14822322588680462
+### iteration step :  80  rmse :  0.1345960286998847
+### iteration step :  90  rmse :  0.12505289214239962
+title   '71 (2014)  ...  À nous la liberté (Freedom for Us) (1931)
+userId              ...                                           
+1         3.081153  ...                                   0.885750
+2         3.049243  ...                                   0.808972
+3         2.295646  ...                                   0.525174
+
+[3 rows x 9719 columns]
+["'71 (2014)", "'Hellboy': The Seeds of Creation (2004)", "'Round Midnight (1986)"]
+title
+'71 (2014)                                   2.205482
+'Hellboy': The Seeds of Creation (2004)      2.889583
+'Round Midnight (1986)                       2.508453
+'Salem's Lot (2004)                          3.422079
+'Til There Was You (1997)                    2.935594
+                                               ...   
+eXistenZ (1999)                              2.797588
+xXx (2002)                                   2.301916
+xXx: State of the Union (2005)               1.476157
+¡Three Amigos! (1986)                        3.394255
+À nous la liberté (Freedom for Us) (1931)    0.639045
+Name: 10, Length: 9579, dtype: float64
+title
+It's a Wonderful Life (1946)                     4.878351
+(500) Days of Summer (2009)                      4.828863
+Maverick (1994)                                  4.723825
+Sandlot, The (1993)                              4.686094
+Star Trek VI: The Undiscovered Country (1991)    4.668854
+Amadeus (1984)                                   4.641766
+Dangerous Minds (1995)                           4.480395
+Da Vinci Code, The (2006)                        4.471178
+Contact (1997)                                   4.463104
+First Knight (1995)                              4.448440
+Name: 10, dtype: float64
+### iteration step :  0  rmse :  3.004563468900263
+### iteration step :  10  rmse :  0.7500632692949655
+### iteration step :  20  rmse :  0.5234709557273104
+### iteration step :  30  rmse :  0.3476054633256061
+### iteration step :  40  rmse :  0.24279311733790596
+### iteration step :  50  rmse :  0.18320061429211792
+### iteration step :  60  rmse :  0.14843634756739832
+### iteration step :  70  rmse :  0.12715505904558722
+### iteration step :  80  rmse :  0.1134819858202047
+### iteration step :  90  rmse :  0.10430836613691127
+title   '71 (2014)  ...  À nous la liberté (Freedom for Us) (1931)
+userId              ...                                           
+1         3.142692  ...                                   0.876753
+2         3.089743  ...                                   0.784913
+3         2.387947  ...                                   0.551067
+
+[3 rows x 9719 columns]
+["'71 (2014)", "'Hellboy': The Seeds of Creation (2004)", "'Round Midnight (1986)"]
+title
+'71 (2014)                                   2.238073
+'Hellboy': The Seeds of Creation (2004)      2.954816
+'Round Midnight (1986)                       2.634100
+'Salem's Lot (2004)                          3.666202
+'Til There Was You (1997)                    3.508851
+                                               ...   
+eXistenZ (1999)                              2.992426
+xXx (2002)                                   2.379493
+xXx: State of the Union (2005)               1.433855
+¡Three Amigos! (1986)                        4.411129
+À nous la liberté (Freedom for Us) (1931)    0.713041
+Name: 10, Length: 9579, dtype: float64
+title
+10 Things I Hate About You (1999)    4.916925
+(500) Days of Summer (2009)          4.890714
+Ghost (1990)                         4.589789
+X-Men (2000)                         4.546507
+Enemy at the Gates (2001)            4.503738
+Blind Side, The  (2009)              4.492887
+Titanic (1997)                       4.442876
+You've Got Mail (1998)               4.438539
+Da Vinci Code, The (2006)            4.426465
+¡Three Amigos! (1986)                4.411129
+Name: 10, dtype: float64
+### iteration step :  0  rmse :  3.0644322643271895
+### iteration step :  10  rmse :  0.7536503990120803
+### iteration step :  20  rmse :  0.5289627320517498
+### iteration step :  30  rmse :  0.34869309878119376
+### iteration step :  40  rmse :  0.23893656878450262
+### iteration step :  50  rmse :  0.1763664853629912
+### iteration step :  60  rmse :  0.14059726820654964
+### iteration step :  70  rmse :  0.11939158744192237
+### iteration step :  80  rmse :  0.10621811244293132
+### iteration step :  90  rmse :  0.09763989932610459
+title   '71 (2014)  ...  À nous la liberté (Freedom for Us) (1931)
+userId              ...                                           
+1         3.105095  ...                                   0.919266
+2         3.156295  ...                                   0.828829
+3         2.483753  ...                                   0.533007
+
+[3 rows x 9719 columns]
+["'71 (2014)", "'Hellboy': The Seeds of Creation (2004)", "'Round Midnight (1986)"]
+title
+'71 (2014)                                   2.212635
+'Hellboy': The Seeds of Creation (2004)      2.899254
+'Round Midnight (1986)                       2.504252
+'Salem's Lot (2004)                          3.534280
+'Til There Was You (1997)                    3.313353
+                                               ...   
+eXistenZ (1999)                              3.539073
+xXx (2002)                                   1.728687
+xXx: State of the Union (2005)               1.484404
+¡Three Amigos! (1986)                        3.669087
+À nous la liberté (Freedom for Us) (1931)    0.741062
+Name: 10, Length: 9579, dtype: float64
+title
+First Knight (1995)                5.445403
+Ghost (1990)                       5.031822
+Jungle Book, The (1994)            4.804068
+Da Vinci Code, The (2006)          4.705699
+My Big Fat Greek Wedding (2002)    4.621957
+(500) Days of Summer (2009)        4.540222
+Shrek 2 (2004)                     4.495908
+Paul (2011)                        4.491718
+Charlotte's Web (1973)             4.392560
+Singin' in the Rain (1952)         4.387435
+Name: 10, dtype: float64
+### iteration step :  0  rmse :  3.0696434585373122
+### iteration step :  10  rmse :  0.7594338221182871
+### iteration step :  20  rmse :  0.5369466599669966
+### iteration step :  30  rmse :  0.35234245374884776
+### iteration step :  40  rmse :  0.23880866375494147
+### iteration step :  50  rmse :  0.1742389176134579
+### iteration step :  60  rmse :  0.137750581907507
+### iteration step :  70  rmse :  0.11639984473848161
+### iteration step :  80  rmse :  0.10332830498195375
+### iteration step :  90  rmse :  0.09494904759497506
+title   '71 (2014)  ...  À nous la liberté (Freedom for Us) (1931)
+userId              ...                                           
+1         3.146044  ...                                   0.936015
+2         3.136636  ...                                   0.845298
+3         2.420754  ...                                   0.537237
+
+[3 rows x 9719 columns]
+["'71 (2014)", "'Hellboy': The Seeds of Creation (2004)", "'Round Midnight (1986)"]
+title
+'71 (2014)                                   2.436635
+'Hellboy': The Seeds of Creation (2004)      3.037408
+'Round Midnight (1986)                       2.629437
+'Salem's Lot (2004)                          3.672946
+'Til There Was You (1997)                    3.725418
+                                               ...   
+eXistenZ (1999)                              2.847557
+xXx (2002)                                   2.037293
+xXx: State of the Union (2005)               1.477537
+¡Three Amigos! (1986)                        4.447712
+À nous la liberté (Freedom for Us) (1931)    0.718465
+Name: 10, Length: 9579, dtype: float64
+title
+(500) Days of Summer (2009)    5.022382
+First Knight (1995)            4.794963
+Mission: Impossible (1996)     4.599503
+My Cousin Vinny (1992)         4.575462
+Night at the Museum (2006)     4.546087
+Coco (2017)                    4.498971
+Sandlot, The (1993)            4.460617
+¡Three Amigos! (1986)          4.447712
+Ghost (1990)                   4.437403
+Rebecca (1940)                 4.384885
+Name: 10, dtype: float64
